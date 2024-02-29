@@ -10,24 +10,21 @@
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=youdao.com
 // @grant        none
 
-
-
 // ==/UserScript==
 function clickAudio (latestWord) {
     const timerId = setInterval(function(){
-        // seperate single word and sentences
-        // while element per-phone sum as zero, it is sentence translate
+        // Determine whether it is a word or a sentence.
         let pronounceElements = document.querySelectorAll(".trans-container .word-head .pronounce")
         switch (pronounceElements.length) {
             case 0:
                 console.error("class 'pronounce' not found")
                 break
             case 1:
-                // pronunciation of English word or sentence
+                // Pronunciation of English word or sentence.
                 pronounceElements[0].click()
                 break
             case 2:
-                // pronunciation of American
+                // Pronunciation of American.
                 pronounceElements[1].click()
                 break
             default:
@@ -46,6 +43,7 @@ document.addEventListener('keydown', function(event) {
             return
         }
         async function doSomethingAfterDelay() {
+            // Wait code loading.
             await wait(500);
             clickAudio(latestContextElement.innerText)
         }doSomethingAfterDelay();
