@@ -3,7 +3,7 @@
 // @namespace    https://github.com/jellyqwq
 // @downloadURL  https://raw.githubusercontent.com/jellyqwq/youdao-web-plugin/main/youdao-web-plugin.js
 // @updateURL    https://raw.githubusercontent.com/jellyqwq/youdao-web-plugin/main/youdao-web-plugin.js
-// @version      0.2
+// @version      0.2.1
 // @description  Easy to use
 // @author       jellyqwq
 // @match        https://*.youdao.com/**/**
@@ -21,4 +21,3 @@
         type: 'text/javascript'
     })
 })
-    
