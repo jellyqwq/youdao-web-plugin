@@ -11,7 +11,8 @@
 // @grant        none
 
 // ==/UserScript==
-function clickAudio (latestWord) {
+const wait = (milliseconds) => new Promise(resolve => setTimeout(resolve, milliseconds));
+function clickAudio () {
     const timerId = setInterval(function(){
         // Determine whether it is a word or a sentence.
         let pronounceElements = document.querySelectorAll(".trans-container .word-head .pronounce")
@@ -34,7 +35,9 @@ function clickAudio (latestWord) {
         clearInterval(timerId);
     }, 500)
 }
-const wait = (milliseconds) => new Promise(resolve => setTimeout(resolve, milliseconds));
+function getLatestContext() {
+    return document.querySelector(".trans-container .word-head .title") == null ? document.querySelector(".trans-container .word-head .lj-title") : document.querySelector(".trans-container .word-head .title")
+}
 document.addEventListener('keydown', function(event) {
     if (event.key === 'Enter') {
         let latestContextElement = getLatestContext()
@@ -45,10 +48,7 @@ document.addEventListener('keydown', function(event) {
         async function doSomethingAfterDelay() {
             // Wait code loading.
             await wait(500);
-            clickAudio(latestContextElement.innerText)
+            clickAudio()
         }doSomethingAfterDelay();
     }
 });
-function getLatestContext() {
-    return document.querySelector(".trans-container .word-head .title") == null ? document.querySelector(".trans-container .word-head .lj-title") : document.querySelector(".trans-container .word-head .title")
-}
