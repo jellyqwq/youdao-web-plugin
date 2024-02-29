@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         youdao-web-plugin
-// @namespace    https://github.com/jellyqwq
+// @namespace    https://github.com/jellyqwq/youdao-web-plugin
 // @downloadURL  https://raw.githubusercontent.com/jellyqwq/youdao-web-plugin/main/youdao-web-plugin.js
 // @updateURL    https://raw.githubusercontent.com/jellyqwq/youdao-web-plugin/main/youdao-web-plugin.js
 // @version      1.0
