@@ -35,16 +35,12 @@ function clickAudio () {
         clearInterval(timerId);
     }, 500)
 }
-function getLatestContext() {
-    return document.querySelector(".trans-container .word-head .title") == null ? document.querySelector(".trans-container .word-head .lj-title") : document.querySelector(".trans-container .word-head .title")
-}
+// function getLatestContext() {
+//     return document.querySelector(".trans-container .word-head .title") == null ? document.querySelector(".trans-container .word-head .lj-title") : document.querySelector(".trans-container .word-head .title")
+// }
 document.addEventListener('keydown', function(event) {
     if (event.key === 'Enter') {
-        let latestContextElement = getLatestContext()
-        if (latestContextElement.innerText == document.getElementById("search_input").value) {
-            document.getElementById("search_input").focus()
-            return
-        }
+        document.getElementById("search_input").focus()
         async function doSomethingAfterDelay() {
             // Wait code loading.
             await wait(500);
